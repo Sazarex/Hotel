@@ -47,16 +47,15 @@ namespace Hotel_Cheban.DialogForms
             {
                 var isRoomExists = _dbContext.Rooms.Any(r => r.Number == numericUpDown1.Value);
                 var isClientExists = _dbContext.Clients.Any(c => c.Name == textBox2.Text);
-                var isEmployeeExists = _dbContext.Employees.Any(emp => emp.Name == textBox3.Text);
-                var isDateBusy = _dbContext.Payments.Any(p => (dateTimePicker1.Value.CompareTo(p.StartDate.Value) >= 0 && dateTimePicker1.Value.CompareTo(p.EndDate.Value) <= 0) ||
-                                                               (dateTimePicker2.Value.CompareTo(p.StartDate.Value) >= 0 && dateTimePicker2.Value.CompareTo(p.EndDate.Value) <= 0));
+
+                var isDateBusy = _dbContext.Payments.Any(p => ((dateTimePicker1.Value.CompareTo(p.StartDate.Value) >= 0 && dateTimePicker1.Value.CompareTo(p.EndDate.Value) <= 0) ||
+                                                               (dateTimePicker2.Value.CompareTo(p.StartDate.Value) >= 0 && dateTimePicker2.Value.CompareTo(p.EndDate.Value) <= 0))
+                                                               && p.Room.Number == numericUpDown1.Value);
                 
                 if (!isRoomExists)
                     MessageBox.Show("Комнаты не существует.");
                 else if (!isClientExists)
                     MessageBox.Show("Клиента не существует.");
-                else if(!isEmployeeExists)
-                    MessageBox.Show("Сотрудника не существует.");
                 else if(isDateBusy)
                     MessageBox.Show("Дата занята.");
                 else
@@ -82,12 +81,12 @@ namespace Hotel_Cheban.DialogForms
 
         private bool CheckEmptyComponents()
         {
-            if (numericUpDown1.Value <= 0  || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
+            if (numericUpDown1.Value <= 0  || string.IsNullOrWhiteSpace(textBox2.Text))
             {
                 MessageBox.Show("Проверьте введенные данные. Возможно вы ввели пустые значения.");
                 return false;
             }
-            else if ((dateTimePicker1.Value > dateTimePicker2.Value) || (dateTimePicker1.Value < DateTime.Now))
+            else if ((dateTimePicker1.Value > dateTimePicker2.Value))
             {
                 MessageBox.Show("Проверьте введенную дату.");
                 return false;

@@ -92,10 +92,5 @@ namespace Hotel_Cheban.DialogForms.SearchDialogForms
                 clietnEditForm.Show();
             }
         }
-
-        private void ClientSearchForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
