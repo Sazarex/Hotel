@@ -465,9 +465,17 @@ namespace Hotel_Cheban
         }
         #endregion
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Не занятые комнаты на дату
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button17_Click(object sender, EventArgs e)
         {
+            var freeNumbers = _dbContext.Payments.Where(p => dateTimePicker1.Value >= p.StartDate && dateTimePicker1.Value <= p.EndDate).Select(p => p.Room.Number).ToList();
+            var rooms = _dbContext.Rooms.Where(r => !freeNumbers.Any(n => n == r.Number)).ToList();
 
+            dataGridView1.DataSource = rooms;
         }
     }
 }

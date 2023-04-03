@@ -63,8 +63,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(141, 21);
             this.comboBox1.TabIndex = 21;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -73,7 +71,6 @@
             this.label2.Size = new System.Drawing.Size(171, 13);
             this.label2.TabIndex = 20;
             this.label2.Text = "Зарегистрировавший сотрудник";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox1
             // 
@@ -82,7 +79,6 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(141, 20);
             this.textBox1.TabIndex = 19;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -92,7 +88,6 @@
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 18;
             this.label1.Text = "Ф.И.О.";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ClientEditForm
             // 

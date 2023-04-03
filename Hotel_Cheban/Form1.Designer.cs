@@ -55,6 +55,8 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button17 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -85,6 +87,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button17);
+            this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.button2);
@@ -97,7 +101,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Номера";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // button4
             // 
@@ -344,6 +347,23 @@
             this.dataGridView4.TabIndex = 0;
             this.dataGridView4.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView4_CellFormatting);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(491, 300);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(132, 20);
+            this.dateTimePicker1.TabIndex = 5;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(629, 297);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(132, 23);
+            this.button17.TabIndex = 6;
+            this.button17.Text = "Не занятые на дату";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,6 +414,8 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 
